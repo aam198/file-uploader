@@ -113,6 +113,10 @@ body{
 
 
 .modal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 70px auto;
     padding: 40px;
     background: #fff;
@@ -154,7 +158,16 @@ body{
     padding: 15px 15px;
   }
 
-  .btn-sm {
+.modal-box .navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+
+}  
+  .modal-box .btn-sm {
+    display: flex;
+    flex-direction: row;
     padding: 10px 10px;
     border: none;
     background: rgba(45 68 105 / 100%);
