@@ -48,7 +48,7 @@ body{
     color: #000657;
     margin: 10px 0 15px 0;
 }
-.drag-area button{
+.drag-area .btn{
     padding: 10px 25px;
     border: none;
     background: rgba(45 68 105 / 100%);
@@ -59,15 +59,98 @@ body{
     box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 }
 
-.drag-area button:hover{
+.drag-area .btn:hover, .btn:hover{
     background-color:#1c2c62;
     transform: translate3d(0px,-1px,0px);
     box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
 }
 
-/* .drag-area img {
+.btn:focus {
+    outline: 1px dashed #e0e0e0;
+      
+}
+.drag-area img {
     height: 50%;
     width: 50%;
     object-fit: cover;
     border-radius: 5px;
-} */
+}
+
+
+.btn {
+    padding: 10px 25px;
+    border: none;
+    background: rgba(45 68 105 / 100%);
+    color: #F6F7F9;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.btn:disabled{
+    cursor: not-allowed;
+    background-color: #e0e0e0;
+    border: 1px dashed #292929;
+
+}
+
+/* Modal Styles */
+.modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+
+
+.modal-box {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 4s ease-in-out;
+    z-index: 10;
+  }
+  
+  .modal-box h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  
+  .modal-box .close{
+    color: rgba(45 68 105 / 100%);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .modal-box .close:hover {
+    color: #ff9900;
+  }
+  
+  .modal-box .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  
+  @media screen and (max-width: 700px){
+    .modal-box{
+      width: 70%;
+    }
+  }
