@@ -78,6 +78,7 @@ body{
 
 
 .btn {
+    margin-top: 15px;
     padding: 10px 25px;
     border: none;
     background: rgba(45 68 105 / 100%);
@@ -92,7 +93,12 @@ body{
     cursor: not-allowed;
     background-color: #e0e0e0;
     border: 1px dashed #292929;
+}
 
+.continue-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 /* Modal Styles */
@@ -100,7 +106,7 @@ body{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 200px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -113,10 +119,8 @@ body{
 
 
 .modal-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* display: flex;
+    flex-direction: column; */
     margin: 70px auto;
     padding: 40px;
     background: #fff;
@@ -128,11 +132,10 @@ body{
   }
   
   .modal-box h2 {
-    margin-top: 0;
     margin-bottom: 5px;
     color: #333;
     font-family: Tahoma, Arial, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-align: center;
   }
   
@@ -155,7 +158,9 @@ body{
   .modal-box .content {
     max-height: 40%;
     overflow: auto;
-    padding: 15px 15px;
+    padding: 30px 30px;
+    text-align: center;
+    font-size: 1.2rem;
   }
 
 .modal-box .navigation{
