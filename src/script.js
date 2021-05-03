@@ -41,7 +41,7 @@ dropArea.addEventListener("drop", (e) =>{
     //getting user select file and [0] this means if user select multiple files then we'll select only the first one
     file = e.dataTransfer.files[0];
     showFile(); //calling function
-    listUpload ();
+    
 });
 
 
