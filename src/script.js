@@ -20,6 +20,7 @@ input.addEventListener("change", function(){
     file = this.files[0];
     dropArea.classList.add("active");
     showFile();
+    listUpload ();
 });
 
 //If user Drag File Over DropArea
@@ -40,8 +41,32 @@ dropArea.addEventListener("drop", (e) =>{
     //getting user select file and [0] this means if user select multiple files then we'll select only the first one
     file = e.dataTransfer.files[0];
     showFile(); //calling function
+    listUpload ();
 });
 
+
+// Progress Bar when uploading files
+
+let uploadProgress = []
+let progressBar = document.getElementById('progress-bar')
+
+function initializeProgress(numFiles) {
+  progressBar.value = 0
+  uploadProgress = []
+
+  for(let i = numFiles; i > 0; i--) {
+    uploadProgress.push(0)
+  }
+}
+
+function updateProgress(fileNumber, percent) {
+  uploadProgress[fileNumber] = percent
+  let total = uploadProgress.reduce((tot, curr) => tot + curr, 0) / uploadProgress.length
+  console.debug('update', fileNumber, percent, total)
+  progressBar.value = total
+}
+
+// Open Modal
 nextBtn.onclick = function() {
   modal.style.display = "block";
  }
@@ -84,4 +109,50 @@ function showFile(){
       nextBtn.disabled = true;
     }
   }
+  
+  function listUpload () {
+    const list = document.querySelector('ul');
+    const input = document.querySelector('input');
+    const files = document.querySelector('file');
+
+    const btn = document.querySelector('button');
+
+    let myItem = input.value;
+     input.value= "";
+   
+  if (myItem !== "" ){ 
+    
+    nextBtn.disabled = false;
+    
+     //Creating 3 new elements and store them in variables 
+     const listItem = document.createElement('li');
+     const listText = document.createElement('span');
+     const listBtn = document.createElement('button');
+   
+ 
+
+  listItem.classList.add('fadeIn');
+   
+     list.appendChild(listItem);
+     listItem.appendChild(listText);
+     listText.textContent = myItem;
+
+
+     listItem.appendChild(listBtn);
+     listBtn.textContent = 'Remove';
+      
+   
+     listBtn.onclick = function(e){
+        list.removeChild(listItem);
+     }
+    
+     input.focus();
+  }
+  
+  else{
+   alert("Please select a file.");
+   }
+ }
+
+
   
