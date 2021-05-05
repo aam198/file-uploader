@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+
+:root {
+  --bkg-clr:#2f4858;
+  --dashed: rgba(45 68 105 / 100%);
+
+  --red-clr: #c35353;
+  --red-clr-hover: #d14747;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,8 +25,30 @@ body{
     background-color: #e3e7ea;
 }
 
+
+/* List & Remove */
+
+li{
+  
+}
+.remove-btn {
+  padding: 5px 5px;
+  border: 1px solid #dd3c3c;
+  color: #F6F7F9;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.25s ease, background-color 0.4s ease;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.remove-btn{
+  background-color: var(--red-clr-hover);
+}
+
+/* Drag in area */
 .drag-area{
-    border: 2px dashed rgba(45 68 105 / 100%);
+    border: 2px dashed var(--bkg-clr);
     height: 500px;
     width: 700px;
     border-radius: 15px;
@@ -113,7 +144,7 @@ body{
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
   }
 
 
@@ -178,7 +209,7 @@ body{
     color: #F6F7F9;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    transition: transform 0.3s ease, box-shadow 0.25s ease, background-color 0.4s ease;
     box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
   }
 .btn-sm:hover{
@@ -188,11 +219,52 @@ body{
 }
 
 .btn-sm:focus {
-    outline: 2px dashed #ff9900;
+  outline: 2px dashed #ff9900;
+}
+
+#upload-s3:hover{
+  background-color: #ff9900;
+}
+
+#backBtn, .remove-btn{
+  background-color: var(--red-clr);
+  border: 1px solid #dd3c3c;
+}
+
+#backBtn:hover, .remove-btn:hover{
+  background-color: #d14747;
 }
   
   @media screen and (max-width: 700px){
     .modal-box{
       width: 70%;
+  }
+  
+
+  /* Animation  */
+
+  .fadeIn {
+    animation: fadeIn 1s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeOut{
+      animation: fadeOut 3s;
+  }
+
+  @keyframes fadeOut{
+      from {
+          opacity: 1;
+      }
+      to {
+          opacity: 0;
+      }
   }

@@ -7,19 +7,22 @@ const input = document.querySelector("input");
 const nextBtn = document.getElementById("nextBtn");
 const modal = document.getElementById("myModal");
 const span = document.getElementsByClassName("close") [0];
-const backBtn = document.getElementsByClassName("backBtn") [0];
+const backBtn = document.getElementById("backBtn");
 
 let file; 
 
-button.onclick = () => {
-    input.click();
-}
+
+button.addEventListener("click", () => {
+  input.click();
+  dropArea.classList.add("active");
+  dragText.textContent = "Select File to Upload";
+})
 
 //getting user select file and [0] this means if user select multiple files then we'll select only the first one
 input.addEventListener("change", function(){
     file = this.files[0];
     dropArea.classList.add("active");
-    showFile();
+    // showFile();
     listUpload ();
 });
 
@@ -41,6 +44,7 @@ dropArea.addEventListener("drop", (e) =>{
     //getting user select file and [0] this means if user select multiple files then we'll select only the first one
     file = e.dataTransfer.files[0];
     showFile(); //calling function
+    listUpload ();
     
 });
 
@@ -67,17 +71,17 @@ function updateProgress(fileNumber, percent) {
 }
 
 // Open Modal
-nextBtn.onclick = function() {
+nextBtn.addEventListener("click", () => {
   modal.style.display = "block";
- }
+});
  
- span.onclick = function() {
-   modal.style.display = "none";
- }
-
- backBtn.onclick = function() {
+ span.addEventListener("click", () => {
   modal.style.display = "none";
-}
+ });
+
+ backBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
 
 //  backBtn.onclick = function() {
 //   modal.style.display = "none";
@@ -111,6 +115,7 @@ function showFile(){
   }
   
   function listUpload () {
+    dropArea.classList.remove("active");
     const list = document.querySelector('ul');
     const input = document.querySelector('input');
     const files = document.querySelector('file');
@@ -118,7 +123,7 @@ function showFile(){
     const btn = document.querySelector('button');
 
     let myItem = input.value;
-     input.value= "";
+    input.value= "";
    
   if (myItem !== "" ){ 
     
@@ -129,9 +134,7 @@ function showFile(){
      const listText = document.createElement('span');
      const listBtn = document.createElement('button');
    
- 
-
-  listItem.classList.add('fadeIn');
+    listItem.classList.add('fadeIn');
    
      list.appendChild(listItem);
      listItem.appendChild(listText);
@@ -140,6 +143,7 @@ function showFile(){
 
      listItem.appendChild(listBtn);
      listBtn.textContent = 'Remove';
+     listBtn.className= "remove-btn";
       
    
      listBtn.onclick = function(e){
