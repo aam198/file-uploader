@@ -132,7 +132,7 @@ function showFile(){
      //Creating 3 new elements and store them in variables 
      const listItem = document.createElement('li');
      const listText = document.createElement('span');
-     const listBtn = document.createElement('button');
+     const close = document.createElement('i');
    
     listItem.classList.add('fadeIn');
    
@@ -141,19 +141,19 @@ function showFile(){
      listText.textContent = myItem;
 
 
-     listItem.appendChild(listBtn);
-     listBtn.textContent = 'Remove';
-     listBtn.className= "remove-btn";
+     listItem.appendChild(close);
+     close.className="fas fa-times";
+     
       
-   
-     listBtn.onclick = function(e){
-
+    close.addEventListener("click", function(e){
       setTimeout(function(){
         list.removeChild(listItem);
       }, 1000);
         listItem.classList.remove('fadeIn');
         listItem.classList.add('fadeOut');
-     }
+    });
+
+     
     
      input.focus();
   }

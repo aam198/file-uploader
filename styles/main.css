@@ -6,7 +6,7 @@
   --dashed: rgba(45 68 105 / 100%);
 
   --red-clr: #c35353;
-  --red-clr-hover: #d14747;
+  --red-clr-hover: #de3838;
 }
 
 * {
@@ -38,6 +38,22 @@ li span{
   margin-top: 5px;
 }
 
+li i {
+  color: var(--red-clr);
+  cursor: pointer;
+  font-size: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+
+li i:hover{
+  color: var(--red-clr-hover);
+}
+
+
+/* Take out Remove button? */
 .remove-btn {
   display: flex;
   justify-content: flex-end;
@@ -236,13 +252,13 @@ li span{
   background-color: #ff9900;
 }
 
-#backBtn, .remove-btn{
+#backBtn, .remove-btn {
   background-color: var(--red-clr);
   border: 1px solid #dd3c3c;
 }
 
 #backBtn:hover, .remove-btn:hover{
-  background-color: #d14747;
+  background-color: #de3838;
 }
   
   @media screen and (max-width: 700px){
