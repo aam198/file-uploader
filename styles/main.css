@@ -29,9 +29,19 @@ body{
 /* List & Remove */
 
 li{
-  
+  display: flex;
+  justify-content:space-between;
+  margin-bottom: 10px;
 }
+
+li span{
+  margin-top: 5px;
+}
+
 .remove-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   padding: 5px 5px;
   border: 1px solid #dd3c3c;
   color: #F6F7F9;
@@ -239,7 +249,7 @@ li{
     .modal-box{
       width: 70%;
   }
-  
+}
 
   /* Animation  */
 
@@ -257,14 +267,14 @@ li{
   }
 
   .fadeOut{
-      animation: fadeOut 3s;
+    animation: fadeOut 1s;
   }
 
   @keyframes fadeOut{
-      from {
-          opacity: 1;
-      }
-      to {
-          opacity: 0;
-      }
+    from {
+  		opacity: 1;
+  	}
+  	to {
+  		opacity: 0;
+  	}
   }

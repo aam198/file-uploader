@@ -147,7 +147,12 @@ function showFile(){
       
    
      listBtn.onclick = function(e){
+
+      setTimeout(function(){
         list.removeChild(listItem);
+      }, 1000);
+        listItem.classList.remove('fadeIn');
+        listItem.classList.add('fadeOut');
      }
     
      input.focus();
