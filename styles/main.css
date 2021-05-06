@@ -5,6 +5,10 @@
   --bkg-clr:#2f4858;
   --dashed: rgba(45 68 105 / 100%);
 
+  --ylw-clr:#ff9900;
+
+  --blue-font-clr: 
+
   --red-clr: #c35353;
   --red-clr-hover: #de3838;
 }
@@ -74,83 +78,88 @@ li i:hover{
 
 /* Drag in area */
 .drag-area{
-    border: 2px dashed var(--bkg-clr);
-    height: 500px;
-    width: 700px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  border: 2px dashed var(--bkg-clr);
+  height: 500px;
+  width: 700px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .drag-area.active{
-    border: 2px dashed #ff9900;
+  border: 2px dashed var(--ylw-clr);
 }
 
 .drag-area .icon{
-    font-size: 4rem;
-    color: #ff9900;
+  font-size: 4rem;
+  color: var(--ylw-clr);
 }
 
 .drag-area header{
-    font-size: 30px;
-    font-weight: 500;
-    color: #000657;
+  font-size: 30px;
+  font-weight: 500;
+  color: #000657;
 }
 
 .drag-area span{
-    font-size: 25px;
-    font-weight: 500;
-    color: #000657;
-    margin: 10px 0 15px 0;
+  font-size: 25px;
+  font-weight: 500;
+  color: #000657;
+  margin: 10px 0 15px 0;
 }
 .drag-area .btn{
-    padding: 10px 25px;
-    border: none;
-    background: rgba(45 68 105 / 100%);
-    color: #F6F7F9;
-    font-size: 1.5em;
-    cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  padding: 10px 25px;
+  border: none;
+  background: rgba(45 68 105 / 100%);
+  color: #F6F7F9;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 }
 
 .drag-area .btn:hover, .btn:hover{
-    background-color:#1c2c62;
-    transform: translate3d(0px,-1px,0px);
-    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  background-color:#1c2c62;
+  transform: translate3d(0px,-1px,0px);
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
 }
 
 .btn:focus {
-    outline: 2px dashed #ff9900;
+  outline: 2px dashed #ff9900;
       
 }
 .drag-area img {
-    height: 50%;
-    width: 50%;
-    object-fit: cover;
-    border-radius: 5px;
+  height: 50%;
+  width: 50%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 
 .btn {
-    margin-top: 15px;
-    padding: 10px 25px;
-    border: none;
-    background: rgba(45 68 105 / 100%);
-    color: #F6F7F9;
-    font-size: 1.5em;
-    cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: none;
+  background: rgba(45 68 105 / 100%);
+  color: #F6F7F9;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 }
 
 .btn:disabled{
-    cursor: not-allowed;
-    background-color: #e0e0e0;
-    border: 1px dashed #292929;
+  cursor: not-allowed;
+  background-color: #e0e0e0;
+  border: 1px dashed #292929;
 }
+
+.drag-area progress{
+  margin: 10px 0;
+}
+
 
 .continue-container{
   display: flex;
@@ -172,8 +181,6 @@ li i:hover{
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
   }
-
-
 
 .modal-box {
     /* display: flex;
@@ -208,7 +215,7 @@ li i:hover{
   }
   
   .modal-box .close:hover {
-    color: #ff9900;
+    color: var(--ylw-clr);
     cursor: pointer;
   }
   

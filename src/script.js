@@ -51,8 +51,8 @@ dropArea.addEventListener("drop", (e) =>{
 
 // Progress Bar when uploading files
 
-let uploadProgress = []
-let progressBar = document.getElementById('progress-bar')
+let uploadProgress = [];
+let progressBar = document.getElementById('progress-bar');
 
 function initializeProgress(numFiles) {
   progressBar.value = 0
@@ -68,6 +68,13 @@ function updateProgress(fileNumber, percent) {
   let total = uploadProgress.reduce((tot, curr) => tot + curr, 0) / uploadProgress.length
   console.debug('update', fileNumber, percent, total)
   progressBar.value = total
+}
+
+function handleFiles(files) {
+  files = [...files]
+  initializeProgress(files.length)
+  files.forEach(uploadFile)
+  files.forEach(previewFile)
 }
 
 // Open Modal
