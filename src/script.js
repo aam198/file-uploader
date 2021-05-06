@@ -9,7 +9,9 @@ const modal = document.getElementById("myModal");
 const span = document.getElementsByClassName("close") [0];
 const backBtn = document.getElementById("backBtn");
 
-let file; 
+
+
+// let file; 
 
 
 button.addEventListener("click", () => {
@@ -23,7 +25,7 @@ input.addEventListener("change", function(){
     file = this.files[0];
     dropArea.classList.add("active");
     // showFile();
-    listUpload ();
+    listUpload();
 });
 
 //If user Drag File Over DropArea
@@ -42,9 +44,12 @@ dropArea.addEventListener("dragleave", ()=>{
 dropArea.addEventListener("drop", (e) =>{
     e.preventDefault();
     //getting user select file and [0] this means if user select multiple files then we'll select only the first one
-    file = e.dataTransfer.files[0];
-    showFile(); //calling function
-    listUpload ();
+   const dt = e.dataTransfer;
+   const files = dt.files;
+
+   handleFiles(files);
+    // showFile(); //calling function
+    // listUpload();
     
 });
 
@@ -55,16 +60,16 @@ let uploadProgress = [];
 let progressBar = document.getElementById('progress-bar');
 
 function initializeProgress(numFiles) {
-  progressBar.value = 0
-  uploadProgress = []
+  progressBar.value = 0;
+  uploadProgress = [];
 
   for(let i = numFiles; i > 0; i--) {
-    uploadProgress.push(0)
+    uploadProgress.push(0);
   }
 }
 
 function updateProgress(fileNumber, percent) {
-  uploadProgress[fileNumber] = percent
+  uploadProgress[fileNumber] = percent;
   let total = uploadProgress.reduce((tot, curr) => tot + curr, 0) / uploadProgress.length
   console.debug('update', fileNumber, percent, total)
   progressBar.value = total
@@ -73,8 +78,7 @@ function updateProgress(fileNumber, percent) {
 function handleFiles(files) {
   files = [...files]
   initializeProgress(files.length)
-  files.forEach(uploadFile)
-  files.forEach(previewFile)
+  listUpload();
 }
 
 // Open Modal
