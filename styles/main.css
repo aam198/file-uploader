@@ -7,10 +7,11 @@
 
   --ylw-clr:#ff9900;
 
-  --blue-font-clr: 
+  --blue-font-clr: #000657;
 
+  --blue-hover: #1c2c62;
   --red-clr: #c35353;
-  --red-clr-hover: #de3838;
+  --red-hover: #de3838;
 }
 
 * {
@@ -100,13 +101,13 @@ li i:hover{
 .drag-area header{
   font-size: 30px;
   font-weight: 500;
-  color: #000657;
+  color: var(--blue-font-clr);
 }
 
 .drag-area span{
   font-size: 25px;
   font-weight: 500;
-  color: #000657;
+  color: var(--blue-font-clr);
   margin: 10px 0 15px 0;
 }
 .drag-area .btn{
@@ -121,13 +122,13 @@ li i:hover{
 }
 
 .drag-area .btn:hover, .btn:hover{
-  background-color:#1c2c62;
+  background-color:var(--blue-hover);
   transform: translate3d(0px,-1px,0px);
   box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
 }
 
 .btn:focus {
-  outline: 2px dashed #ff9900;
+  outline: 2px dashed var(--ylw-clr);
       
 }
 .drag-area img {
@@ -183,13 +184,13 @@ li i:hover{
   }
 
 .modal-box {
-    /* display: flex;
-    flex-direction: column; */
-    margin: 70px auto;
+    /* display: flex; */
+    /* flex-direction: column; */
+    margin: 0 auto;
     padding: 40px;
     background: #fff;
     border-radius: 5px;
-    width: 30%;
+    width: 35%;
     position: relative;
     transition: all 4s ease-in-out;
     z-index: 10;
@@ -237,6 +238,7 @@ li i:hover{
     display: flex;
     flex-direction: row;
     padding: 10px 15px;
+    margin: 0 5px;
     border: none;
     background: rgba(45 68 105 / 100%);
     color: #F6F7F9;
@@ -252,11 +254,11 @@ li i:hover{
 }
 
 .btn-sm:focus {
-  outline: 2px dashed #ff9900;
+  outline: 2px dashed var(--ylw-clr);
 }
 
 #upload-s3:hover{
-  background-color: #ff9900;
+  background-color: var(--ylw-clr);
 }
 
 #backBtn, .remove-btn {
@@ -270,7 +272,7 @@ li i:hover{
   
   @media screen and (max-width: 700px){
     .modal-box{
-      width: 70%;
+      width: 100%;
   }
 }
 
