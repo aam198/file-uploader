@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test 2</title>
+</head>
+<body>
+    <div id="drop-area" style="border: 1px dashed">
+
+        <span id="status"></span>
+        <p>Drop files here</p>
+
+        <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+        <label class="button" for="fileElem">Select files</label>
+        <progress id="progress-bar" max=100 value=0></progress>
+        <br />
+        <br />
+    </div>
+    <div id="gallery"></div>
+    <br />
+    <input id="btnUpload" type="submit" class="button green small" value="Upload" />
+
+
+    <script src="src/test-2.js"></script>
+
+</body>
+</html>

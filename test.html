@@ -7,12 +7,14 @@
     <title>File Upload Example</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/test.css">
+
     
 </head>
 <body>
     
 <div class="wrapper">
-
+    <h1>Test Page</h1>
     <ul></ul>
 
     <div class="drag-area" id="drop-area">
@@ -27,8 +29,7 @@
 <div class="continue-container">
     <button class="btn" id="nextBtn" disabled >Next</button>
 
-    <a href="test.html"><button class="btn"> Test</button></a>
-    <a href="test-2.html"><button class="btn"> Test 2</button></a>
+    <a href="index.html"><button class="btn">Back</button></a>
 
     <div id ="myModal" class="modal">
         <div class="modal-box">
@@ -45,8 +46,22 @@
         </div>
        </div>
     </div>
+
+
+
 </div>
 
-    <script src="src/script.js"></script>
+
+<div id="drop-area">
+    <form class="my-form">
+      <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
+      <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+      <label class="button" for="fileElem">Select some files</label>
+    </form>
+    <progress id="progress-bar" max=100 value=0></progress>
+    <div id="gallery" /></div>
+  </div>
+
+    <script src="src/test.js"></script>
 </body>
 </html>

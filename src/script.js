@@ -1,4 +1,5 @@
-const dropArea = document.querySelector(".drag-area");
+let dropArea = document.getElementById("drop-area");
+const dragArea = document.querySelector(".drag-area");
 const dragText = document.querySelector("header");
 const button = document.querySelector("button");
 const icon = document.querySelector("icon");
@@ -10,38 +11,54 @@ const span = document.getElementsByClassName("close") [0];
 const backBtn = document.getElementById("backBtn");
 
 
+let droppedFiles = [];
 
-// let file; 
+
+// let file;   Can uncomment if you need file 
+
+//Prevent default drag behaviors
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+  dropArea.addEventListener(eventName, preventDefaults, false)   
+  document.body.addEventListener(eventName, preventDefaults, false)
+});
+
+
+// Highlight drop area when item is dragged over it
+;['dragenter', 'dragover'].forEach(eventName => {
+  dropArea.addEventListener(eventName, highlight, false)
+});
+
+
 
 
 button.addEventListener("click", () => {
   input.click();
-  dropArea.classList.add("active");
+  dragArea.classList.add("active");
   dragText.textContent = "Select File to Upload";
-})
+});
 
 //getting user select file and [0] this means if user select multiple files then we'll select only the first one
 input.addEventListener("change", function(){
     file = this.files[0];
-    dropArea.classList.add("active");
+    dragArea.classList.add("active");
     // showFile();
     listUpload();
 });
 
 //If user Drag File Over DropArea
-dropArea.addEventListener("dragover", (event) => {
+dragArea.addEventListener("dragover", (event) => {
     event.preventDefault(); //Prevents default behavior 
-    dropArea.classList.add("active");
+    dragArea.classList.add("active");
     dragText.textContent = "Release to Upload File";
 });
 
 //If user leave dragged File from DropArea
-dropArea.addEventListener("dragleave", ()=>{
-    dropArea.classList.remove("active");
+dragArea.addEventListener("dragleave", ()=>{
+    dragArea.classList.remove("active");
     dragText.textContent = "Drag & Drop to Upload File";
   });
 
-dropArea.addEventListener("drop", (e) =>{
+dragArea.addEventListener("drop", (e) =>{
     e.preventDefault();
     //getting user select file and [0] this means if user select multiple files then we'll select only the first one
    const dt = e.dataTransfer;
@@ -113,20 +130,20 @@ function showFile(){
         let fileURL = fileReader.result; //passing user file source in fileURL variable
           // UNCOMMENT THIS BELOW LINE. I GOT AN ERROR WHILE UPLOADING THIS POST SO I COMMENTED IT
         let imgTag = `<img src="${fileURL}" alt="image">`; //creating an img tag and passing user selected file source inside src attribute
-        dropArea.innerHTML = imgTag; //adding that created img tag inside dropArea container
+        dragArea.innerHTML = imgTag; //adding that created img tag inside dragArea container
         nextBtn.disabled = false;
       }
       fileReader.readAsDataURL(file);
     }else{
       alert("This is not an Image File!");
-      dropArea.classList.remove("active");
+      dragArea.classList.remove("active");
       dragText.textContent = "Drag & Drop to Upload File";
       nextBtn.disabled = true;
     }
   }
   
   function listUpload () {
-    dropArea.classList.remove("active");
+    dragArea.classList.remove("active");
     const list = document.querySelector('ul');
     const input = document.querySelector('input');
     const files = document.querySelector('file');
