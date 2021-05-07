@@ -308,3 +308,15 @@ li i:hover{
   		opacity: 0;
   	}
   }
+
+  /* Gallery */
+
+  #gallery {
+    margin-top: 10px;
+  }
+  #gallery img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }

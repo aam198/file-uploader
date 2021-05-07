@@ -20,7 +20,7 @@
         <header> Drag & Drop to Upload the File</header>
         <span>OR</span>
         <button class="btn">Browse Files</button>
-        <input type = "file" hidden>
+        <input type = "file" id="fileElem" multiple accept ="image/*" onchange="handleFiles(this.files)" hidden>
         <progress id="progress-bar" max=100 value=0></progress>
     </div>
 
@@ -29,6 +29,8 @@
 
     <a href="test.html"><button class="btn"> Test</button></a>
     <a href="test-2.html"><button class="btn"> Test 2</button></a>
+
+    <div id="gallery"></div>
 
     <div id ="myModal" class="modal">
         <div class="modal-box">
