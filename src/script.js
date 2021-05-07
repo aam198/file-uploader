@@ -193,7 +193,7 @@ function uploadFile(file, i) {
   // Update progress (can be used to show progress indicator)
   xhr.upload.addEventListener("progress", function(e) {
     updateProgress(i, (e.loaded * 100.0 / e.total) || 100);
-  })
+  });
 
   xhr.addEventListener('readystatechange', function(e) {
     if (xhr.readyState == 4 && xhr.status == 200) {
@@ -202,11 +202,11 @@ function uploadFile(file, i) {
     else if (xhr.readyState == 4 && xhr.status != 200) {
       // Error. Inform the user
     }
-  })
+  });
 
-  formData.append('upload_preset', 'ujpu6gyk')
-  formData.append('file', file)
-  xhr.send(formData)
+  formData.append('upload_preset', 'ujpu6gyk');
+  formData.append('file', file);
+  xhr.send(formData);
 }
 
 //   function listUpload () {
