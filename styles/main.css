@@ -158,27 +158,33 @@ li i:hover{
   border: 1px dashed #292929;
 }
 
-progress{
+.progress{
   margin: 10px 0;
-  background-color: var(--ylw-clr);
-  border-radius: 2px; 
+  background:
+   linear-gradient(orange 0 0) left/0% 100% no-repeat
+   lightblue;
+   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
+@keyframes p2 {
+  100% {background-size:110% 100%}
+}
 
-progress[value]::-webkit-progress-bar {
+progress[value]::-webkit-progress-bar, progress[value]::-webkit-progress-value {
   background-color: var(--ylw-clr);
+  border-radius: 20px;
 }
 
-progress[value]::-webkit-progress-value {
-  background-color: var(--progress-ylw);
-}
+
 progress[value]::-moz-progress-bar {
   background-color: var(--progress-ylw);
+  border-radius: 20px;
 }
-#progress-bar{
+ #progress-bar{
+  height: 22px;
   margin: 10px 0;
   background-color: var(--ylw-clr);
-  border-radius: 2px; 
+  border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
 
