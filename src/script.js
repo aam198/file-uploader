@@ -117,11 +117,19 @@ function updateProgress(fileNumber, percent) {
   progressBar.value = total;
 }
 
+// When files are chosen
 function handleFiles(files) {
   files = [...files]
-  initializeProgress(files.length)
-  files.forEach(uploadFile)
-  files.forEach(previewFile)
+  initializeProgress(files.length);
+  files.forEach(uploadFile);
+  files.forEach(previewFile);
+  if(files >= 0){
+    nextBtn.disabled = true;
+  }
+  else {
+    nextBtn.disabled = false;
+  }
+
 }
 
 function previewFile(file) {
@@ -140,6 +148,7 @@ function previewFile(file) {
     const close = document.createElement('i');
    
     listItem.classList.add('fadeIn');
+    listItem.classList.add('verify');
    
      list.appendChild(listItem);
      listItem.appendChild(listText);
@@ -156,8 +165,16 @@ function previewFile(file) {
       }, 1000);
         listItem.classList.remove('fadeIn');
         listItem.classList.add('fadeOut');
+        if(listItem <= 0){
+          nextBtn.disabled = true;
+        }
+        else {
+          nextBtn.disabled = false;
+        }
     });
 }
+
+
 
 // Open Modal
 nextBtn.addEventListener("click", () => {
