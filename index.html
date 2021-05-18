@@ -19,10 +19,12 @@
         <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
         <header> Drag & Drop to Upload the File</header>
         <span>OR</span>
-        <button class="btn">Browse Files</button>
+        <button class="btn" id="browse-btn" onchange="handleFiles(this.files)">Browse Files</button>
+        
         <input type = "file" id="fileElem" multiple accept ="image/*" onchange="handleFiles(this.files)" hidden>
         
         <progress type="range" class="progress" id="progress-bar" min="0" max="100" step="0.1" value="0"> </progress>
+
     </div>
 
 <div class="continue-container">
