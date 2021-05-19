@@ -103,7 +103,7 @@ function handleFiles(files) {
   initializeProgress(files.length);
   files.forEach(uploadFile);
   files.forEach(previewFile);
-  if(files.length <= 0){
+  if(files <= 0){
     nextBtn.disabled = true;
   }
   else {
@@ -131,8 +131,7 @@ function previewFile(file) {
 
      listItem.appendChild(close);
      close.className="fas fa-times";
-     
-      
+
     close.addEventListener("click", () =>{
       setTimeout(function(){
         list.removeChild(listItem);
@@ -142,7 +141,6 @@ function previewFile(file) {
     });
 
 }
-
 
 
 
