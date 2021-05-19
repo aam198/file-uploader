@@ -118,12 +118,21 @@ function previewFile(file) {
     dragArea.classList.remove("active");
     const list = document.querySelector('ul');
     const listItem = document.createElement('li');
+    const checkboxContain = document.createElement('label');
+    const inputCheck = document.createElement('input');
+    const checkmark = document.createElement('span');
     const listText = document.createElement('span');
     const close = document.createElement('i');
    
     listItem.classList.add('fadeIn');
     listItem.classList.add('verify');
-   
+    checkboxContain.classList.add('checkbox-container');
+    inputCheck.type="checkbox";
+    checkmark.classList.add('checkmark');
+
+     listItem.appendChild(checkboxContain);
+     checkboxContain.appendChild(inputCheck);
+     checkboxContain.appendChild(checkmark);
      list.appendChild(listItem);
      listItem.appendChild(listText);
      listText.textContent = file.name;

@@ -338,4 +338,600 @@ progress[value]{
   	}
   }
 
+  /* From MM Services CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+:root{
+    --bkg-clr: #e3e7ea;
+    --blue-dark: #1c2c62;
+    --blue-med: rgba(45 68 105 / 100%);
+
+    --font-clr: #F6F7F9;
+    --font-dark: #000657;
+    --font-body:'Libre Franklin', sans-serif;
+    
+   
+    --orange: #ff9900;
+    --clr-white: #ffffff; 
+
+    --banner-color: rgba(45 68 105 / 100%);
+
+    --card-bg-color:rgba( 48 72 106 / 20%);
+    --card-content-clr:rgba(246 247 249 / 45%);
+
+    --button-clr: rgba(45 68 105 / 100%);
+    --button-hover: #1c2c62;
+    
+
+    --login-border:rgba(249 250 251 /80%);
+    --border-color: rgba(113 119 144 / 25%);
+    --inactive-color: rgb(113 119 144 / 78%);
+    --content-title-color: #999ba5;
+    --search-bg:  #e3e7ea;
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    max-width: 160rem;
+    scrollbar-color: #666 #201c29; 
+    font-size: 100%;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0; 
+    background-color: #f8f9fa;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.container_grid{
+    display:grid;
+    grid-template-columns: 17rem 2.5fr;
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-areas:
+    "header header"
+    "nav main";
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Beginning of Header Styling */
+
+
+#header{
+    grid-area:header;
+    height: 13rem;
+    color: var(--font-clr);
+    margin-bottom: .5rem;
+    background-color: var(--banner-color);
+    box-shadow: 0 4px 30px rgba(0,0,0,.5);
+}
+
+#headerContainer   {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.header-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    padding: 0 16px 0 40px;
+    cursor: pointer;
+}
+
+.profile-img {
+    border: 2px solid var(--login-border);
+    width: 5rem;
+    height: 5rem;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
+   }
+
+.profile-img:hover{
+    border: 2px solid #f9fafb;
+}
+
+.login-title{
+    font-family: var(--font-body);
+
+}
+/* End of Header Styling */
+
+/* Spacing / Headings Styling */
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+   font-size: 5em;
+   color: var(--font-clr);
+   font-family: 'Archivo Narrow', sans-serif;
+}
+
+h2{
+   font-size: 2em;
+   color: var(--font-clr);
+   font-family: 'Archivo Narrow', sans-serif;
+}
+
+/* Nav/ Sidebar Styling  */
+#nav{
+    grid-area: nav;
+}
+aside {
+    color: var(--font-clr);
+    margin-top: .4rem;
+    min-height: 60rem;
+    max-height: 860px;
+    width: 17rem;
+    padding-left: 15px;
+    height: 47rem;
+    background-image: linear-gradient(20deg , #000657, #30486a);
+    border-top-right-radius: 80px;
+    box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+aside a {
+    font-size: 1.3em;
+    font-family: 'Libre Franklin', sans-serif;
+    color: #fff;
+    display: block;
+    margin-bottom: 15px;
+    padding: 12px;
+    padding-left: 10px;
+    text-decoration: none;
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+.active {
+    font-weight: 600;
+    color: #000657;
+    background: var(--orange);
+    outline: none;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+aside a:hover, aside a:active {
+    font-weight: 600;
+    color: #000657;
+    background: var(--orange);
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    background-color: #ffa500;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+aside a i, aside i {
+    margin-right: 5px;
+}
+
+aside a:hover::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    bottom: 100%;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-bottom-right-radius: 18px;
+    box-shadow: 0 20px 0 0 #ffa500;
+}
+
+aside a:hover::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 100%;
+    right: 0;
+    height: 35px;
+    width: 30px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 -20px 0 0 #ffa500;
+}
+
+aside h2 {
+    margin: 0;
+    padding: 30px 0;
+}
+
+aside .description{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 1.5rem 1rem;
+}
+.description p{
+    padding-bottom: 1rem;
+    line-height: 1.5;
+}
+/* End of Sidebar Styling */
+
+
+/* Styling for Main Section */
+section{
+    display: grid;
+    grid-area: main;
+    margin: 2.5% 1%;
+}
+
+
+
+.card{
+    background-color: var(--card-bg-color);
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    min-width: 900px;
+    margin-right: 4%;
+    height: 50rem;
+    width: 100%;
+    border-radius: 14px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    height: 55px;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 20px;
+    white-space: nowrap;
+    color: var(--font-dark); 
+    text-transform: uppercase;   
+}
+.title-center{
+    justify-content: center;
+}
+.card-header h2{
+    color: var(--font-dark);
+    font-size: 1.1em;
+    margin-left: 2.5rem;
+}
+
+.file-name{
+    display:flex;
+    justify-content: center;
+    width: 30%;
+}
+.file-location{
+    display:flex;
+    justify-content: center;
+    width: 40%;
+}
+.file-type{
+    display:flex;
+    justify-content: center;
+    width: 15%;
+}
+.file-size{
+    display:flex;
+    justify-content: center;
+    width: 15%;
+}
+.status{
+    display:flex;
+    justify-content: center;
+    width: 15%;
+}
+
+
+
+.card-content{
+    font-family: var(--font-body);
+    margin: 1rem;
+}
+
+.card-2{
+    color: #535a62;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    background: #fff;
+    padding: 10px 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(2px 2px 5px #dedede);
+    margin-top: 1rem;
+}
+
+.card-2 p{
+    margin-top: 1rem;
+}
+/* End Styling for Main Area - Cards */
+
+
+/* Search bar Styling */
+
+.card-search {
+    margin-bottom: .8rem;
+}
+.search-bar {
+    height: 40px;
+    display: flex;
+    width: 100%;
+    padding-left: 16px;
+    border-radius: 4px;
+    padding: 0 30px;
+    margin-top: 1rem;
+   }
+   
+    input {
+     width: 15rem;
+     height: 100%;
+     border: none;
+     background-color:  #fff;
+     border-radius: 4px;
+     font-family: 'Libre Franklin', sans-serif;
+     font-size: 18px;
+     font-weight: 500;
+     padding: 0 20px 0 40px;
+     box-shadow: 0 0 0 2px rgb(134 140 160 / 2%);
+     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56.966 56.966' fill='%23717790c7'%3e%3cpath d='M55.146 51.887L41.588 37.786A22.926 22.926 0 0046.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 00.083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z'/%3e%3c/svg%3e");
+     background-size: 20px;
+     background-repeat: no-repeat;
+     background-position: 12px 48%;
+     color: #000657; 
+     transition: width 0.4s ease-in-out;
+   }
+   
+     input::placeholder {
+        font-family: 'Libre Franklin', sans-serif;
+      color: var(--inactive-color);
+      font-size: 15px;
+      font-weight: 500;
+     }
+    
+   input:focus, textarea:focus {      
+     outline: none !important;     
+     border-color: #000657;     
+     box-shadow: 0 0 5px #000657;
+     width: 65%;
+   }
+
+/* End of Styling for Search Bar */
+
+
+/* Buttons */
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+.dl-button, .add-button, .restore-button {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    max-width: 1400px;
+}
+
+.pt-0{
+    padding-top: 0px;
+}
+
+#custom-text{
+    display:flex;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+.btn{
+    font-size: 1.5em;
+    font-family: var(--font-body);
+    cursor: pointer;
+    display:inline-block;
+    width: 15rem;
+    height: 4rem;
+    padding: 1rem;
+    margin-right: 3%;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 1rem;
+    background-color: var(--button-clr);
+    text-decoration: none;
+    color: var(--font-clr);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.btn:hover{
+    background-color: var(--button-hover);
+    transform: translate3d(0px,-1px,0px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+.btn input[type=file]{
+    font-size: 100px;
+    opacity: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+/* 
+.upload-btn-wrapper input[type=file] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+} */
+
+
+/* Check Mark Styling */
+.checkbox-container {
+    position: relative;
+    margin-bottom: 25px;
+    padding: 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+/* To hide the browser's default checkbox */
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+/* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color:  #fff;
+  }
+/* On mouse-over, add a grey background color */
+  .checkbox-container:hover input ~ .checkmark {
+   border: 1px solid var(--blue-med);
+   border-color: var(--blue-med);
+  }
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--blue-dark);
+  }
   
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 7px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+/* End of Checkbox Styling */
+
+/* Card Header text spacing when Checkbox is included */
+
+.file-name-check{
+    width: 25%;
+    text-align: center;
+}
+.file-location-check{
+    width: 25%;
+    text-align: center;
+}
+.file-type-check{
+    text-align: center;
+    width: 14%;
+}
+.file-size-check{
+    text-align: center;
+    width: 15%;
+}
+.status-check{
+    text-align: center;
+    width: 14%;
+}
+/* End of Card Header with CheckBox */
+
+   /* Dialog / Modal Containers */
+
+.dialog {
+background: #fff;
+border-radius: 8px;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+padding: 35px;
+text-align: center;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 860px){
+    .container_grid{
+        display:grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 0.1fr 1fr;
+        grid-template-areas:
+        "header header"
+        "nav main";
+    }
+
+    h1{
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    aside{
+        width: 14rem;
+    }
+    aside a{
+        font-size: 1.2em;
+    }
+   
+    .card-header > h2{
+        display:flex;
+        justify-content: flex-start;
+    }
+}
