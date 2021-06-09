@@ -204,6 +204,7 @@ progress[value]{
 
 /* Modal Styles */
 .modal{
+    display: flex;
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -218,15 +219,13 @@ progress[value]{
   }
 
 .modal-box {
-    /* display: flex; */
-    /* flex-direction: column; */
-    margin: 0 auto;
+    margin: auto;
     padding: 40px;
     background: #fff;
     border-radius: 5px;
     width: 35%;
+    min-width: 450px;
     position: relative;
-    transition: all 4s ease-in-out;
     z-index: 10;
   }
   
@@ -520,7 +519,6 @@ aside a {
 .active {
     font-weight: 600;
     color: #000657;
-    background: var(--orange);
     outline: none;
     position: relative;
     border-top-left-radius: 20px;
