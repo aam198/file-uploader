@@ -103,7 +103,7 @@ function handleFiles(files) {
   initializeProgress(files.length);
   files.forEach(uploadFile);
   files.forEach(previewFile);
-  if(files <= 0){
+  if(files < 1){
     nextBtn.disabled = true;
   }
   else {
@@ -137,6 +137,7 @@ function previewFile(file) {
      listItem.appendChild(listText);
      listText.textContent = file.name;
 
+    
 
      listItem.appendChild(close);
      close.className="fas fa-times";

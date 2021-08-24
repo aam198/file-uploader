@@ -152,7 +152,7 @@ li i:hover{
   box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 }
 
-.btn:disabled{
+.btn:disabled, .btn[disabled], .btn[disabled]:hover, .btn[disabled]:active {
   cursor: not-allowed;
   background-color: #e0e0e0;
   border: 1px dashed #292929;
