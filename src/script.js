@@ -116,15 +116,34 @@ function previewFile(file) {
   reader.readAsDataURL(file)
   
     dragArea.classList.remove("active");
-    const list = document.querySelector('ul');
-    const listItem = document.createElement('li');
+    const fileDetails = document.getElementById('fileDetails');
+    const listItem = document.createElement('div');
     const checkboxContain = document.createElement('label');
     const inputCheck = document.createElement('input');
     const checkmark = document.createElement('span');
     const listText = document.createElement('span');
     const close = document.createElement('i');
+    
+    const size = file.size;
+    const file_name_string = file.name;
+    const file_name_array = file_name_string.split(".");
+    console.log(file_name_array);
+    const file_name= file_name_array[0];
+    const file_type = file_name_array[file_name_array.length-1];
+
+    const file_byte = new Array('Bytes', 'KB', 'MB', 'GB');
+    let fSize = size;
+    var i=0;
+     while(fSize>900){fSize/=1024;i++;}
+
+    const file_size = (Math.round(fSize*100)/100)+' '+file_byte[i];
+
+    let  nodesString = "";
+
+    nodesString += "<div>" + file_name + "</div>" + "<div>" + file_type + "</div>" + "<div>" + file_size + "</div>"; 
+    
    
-    listItem.classList.add('fadeIn');
+    fileDetails.classList.add('fadeIn');
     listItem.classList.add('verify');
     checkboxContain.classList.add('checkbox-container');
     inputCheck.type="checkbox";
@@ -133,18 +152,20 @@ function previewFile(file) {
      listItem.appendChild(checkboxContain);
      checkboxContain.appendChild(inputCheck);
      checkboxContain.appendChild(checkmark);
-     list.appendChild(listItem);
-     listItem.appendChild(listText);
+
+     fileDetails.appendChild(listItem);  // Adding a div?
+     fileDetails.innerHTML += nodesString;
+
      listText.textContent = file.name;
+     listText.textContent += file_type;
+     listText.textContent += file_size;
 
-    
-
-     listItem.appendChild(close);
+     fileDetails.appendChild(close);
      close.className="fas fa-times";
 
     close.addEventListener("click", () =>{
       setTimeout(function(){
-        list.removeChild(listItem);
+        fileDetails.empty();
       }, 1000);
         listItem.classList.remove('fadeIn');
         listItem.classList.add('fadeOut');

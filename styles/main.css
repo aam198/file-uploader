@@ -34,17 +34,14 @@ body{
 
 /* List & Remove */
 
-li{
+.verify {
   display: flex;
   justify-content:space-between;
   margin-bottom: 10px;
-}
-
-li span{
   margin-top: 5px;
 }
 
-li i {
+.fadeIn i {
   color: var(--red-clr);
   cursor: pointer;
   font-size: 25px;
@@ -54,7 +51,7 @@ li i {
   margin-right: 10px;
 }
 
-li i:hover{
+.fadeIn i:hover{
   color: var(--red-clr-hover);
 }
 
