@@ -41,7 +41,7 @@ body{
   margin-top: 5px;
 }
 
-.fadeIn i {
+i.remove {
   color: var(--red-clr);
   cursor: pointer;
   font-size: 25px;
@@ -51,7 +51,7 @@ body{
   margin-right: 10px;
 }
 
-.fadeIn i:hover{
+i.remove:hover{
   color: var(--red-clr-hover);
 }
 

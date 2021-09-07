@@ -161,16 +161,17 @@ function previewFile(file) {
      listText.textContent += file_size;
 
      fileDetails.appendChild(close);
-     close.className="fas fa-times";
+     close.className="fas fa-times remove";
 
     close.addEventListener("click", () =>{
       setTimeout(function(){
-        fileDetails.empty();
+       while (fileDetails.firstChild) {
+         fileDetails.removeChild(fileDetails.firstChild);
+       }
       }, 1000);
-        listItem.classList.remove('fadeIn');
-        listItem.classList.add('fadeOut');
+      fileDetails.classList.remove('fadeIn');
+      fileDetails.classList.add('fadeOut');
     });
-
 }
 
 
