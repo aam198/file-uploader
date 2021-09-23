@@ -22,7 +22,7 @@
         <span>OR</span>
         <button class="btn" id="browse-btn" onchange="handleFiles(this.files)">Browse Files</button>
         
-        <input type = "file" id="fileElem" multiple accept ="image/*" onchange="handleFiles(this.files)" hidden>
+        <input type = "file" id="fileElem" multiple accept =".jpg,.png,.svg, .mp4" onchange="handleFiles(this.files)" hidden>
         
         <progress type="range" class="progress" id="progress-bar" min="0" max="100" step="0.1" value="0"> </progress>
 
