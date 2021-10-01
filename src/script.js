@@ -9,6 +9,9 @@ const nextBtn = document.getElementById("nextBtn");
 const modal = document.getElementById("myModal");
 const span = document.getElementsByClassName("close") [0];
 const backBtn = document.getElementById("backBtn");
+const uploadBtn = document.getElementById("upload-s3");
+const toasts = document.getElementById('toasts');
+
 
 
 
@@ -175,6 +178,53 @@ function previewFile(file) {
 }
 
 
+// Toast Notifications
+
+
+const messages = [
+  'Upload is successful!',
+  'Upload interrupted',
+  'Files are now available',
+  'Search is complete',
+];
+
+const types = [
+  'info',
+  'success',
+  'error',
+];
+
+
+
+function createNotification(message = null, type= null){
+  const notif = document.createElement('div');
+  notif.classList.add('toast');
+  notif.classList.add(type ? type : getRandomType());
+ 
+  
+  notif.innerText = message ? message : getRandomMessage();
+
+  toasts.appendChild(notif);
+
+  setTimeout(() => {
+    notif.remove()
+    // iconSuc.classList.add('hidden');
+  }, 3000);
+}
+
+
+function successUpload(){
+  iconSuc.classList.remove('hidden');
+}
+
+function getRandomMessage() {
+  return messages[Math.floor(Math.random() * messages.length)];
+}
+
+function getRandomType() {
+  return types[Math.floor(Math.random() * types.length)];
+}
+
 
 // Open Modal
 nextBtn.addEventListener("click", () => {
@@ -197,7 +247,12 @@ nextBtn.addEventListener("click", () => {
 
 //  End of Modal
 
+// Toast for file upload in progress,successful, error 
 
+uploadBtn.addEventListener('click', () => {
+  createNotification(messages[0], types[1]);
+  modal.style.display = "none";
+});
   
 
 function uploadFile(file, i) {
