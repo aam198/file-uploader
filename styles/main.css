@@ -930,6 +930,10 @@ text-align: center;
   color: red;
 }
 
+.toast i{
+  padding: 5px;
+}
+
 
 /* Media Queries */
 

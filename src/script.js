@@ -15,6 +15,8 @@ const toasts = document.getElementById('toasts');
 
 
 
+
+
  
 
 //Prevent default drag behaviors
@@ -198,18 +200,25 @@ const types = [
 
 function createNotification(message = null, type= null){
   const notif = document.createElement('div');
+  const icon = document.createElement('i');
+
   notif.classList.add('toast');
+  
+  if(message === messages[0] && type === types[1]){
+  
+    icon.className="fas fa-check-circle";
+  }
   notif.classList.add(type ? type : getRandomType());
- 
   
   notif.innerText = message ? message : getRandomMessage();
 
+  notif.appendChild(icon);
   toasts.appendChild(notif);
-
+    
   setTimeout(() => {
     notif.remove()
     // iconSuc.classList.add('hidden');
-  }, 3000);
+  }, 5000);
 }
 
 
