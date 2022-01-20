@@ -29,7 +29,8 @@
 
 <form>
     <label for="file">Filename:</label><br>
-    <input type="file" name="filename" id="filename" onchange="validate(this)" /> 
+    <input type="file" name="filename" id="filename" 
+    accept =".png"onchange="handleFiles(this.files)" /> 
       <p><input type="submit" name="submit" class="submit" value="Submit" /></p>
 </form>
 
