@@ -934,6 +934,138 @@ text-align: center;
   padding: 5px;
 }
 
+/* Information  */
+.info-wrapper{
+  height: 150px;
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 64px;
+  margin-top: 20vh;
+}
+
+.info-wrapper > section{
+  display: block;
+}
+.Sidenote__IconWrapper{
+  color: var(--color-prirmary);
+  
+}
+
+.Sidenote__Info{
+  background-color: hsl(0deg, 0%, 100%);
+  color: white;
+}
+.dOPfzW{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(-50%, -50%);
+  padding: 8px;
+  background: rgb(14, 20, 27) none repeat scroll 0% 0%;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+}
+
+
+.fQSMjx{
+  width: 100%;
+  margin-right: 32px;
+  margin-left: 32px;
+  position: relative;
+  padding: 24px 32px;
+  font-size: 15px;
+  margin-top: 48px;
+  margin-bottom: 64px;
+  border-left: 3px solid;
+  border-left-color: hsl(0deg, 0%, 100%);
+  border-radius: 6px 6px 6px 3px;
+  transition: background 350ms ease 0s;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+}
+
+.iuXNuP{
+  border-color: rgb(87, 115, 255);
+  background: hsl(210deg, 38%, 15%); 
+}
+
+
+
+.Sidenote_Title {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+i{
+  margin: 0px;
+  padding: 0px;
+  vertical-align: baseline;
+  border: 0px none;
+  display: inline-block;
+  color: var(--color-primary);
+}
+
+/*  Second Info Option */
+
+.file-info-note{
+  width: 40%;
+  border-left-color: #00b8d4;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+  position: relative;
+  margin: 2em 1em;
+  padding: 0 .6rem;
+  border-left: .2rem solid #00b8d4;
+  border-radius: .1rem;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+ .file-info-note > .title{
+   display: flex;
+   align-items: center;
+  margin: 0 -.6rem;
+  padding: .5rem .6rem .5rem 1rem;
+  border-bottom: .05rem solid rgba(68,138,255,.1);
+  border-bottom-color: rgba(68, 138, 255, 0.1);
+  background-color: rgba(68,138,255,.1);
+  font-weight: 700;
+  font-size: .85rem;
+}
+
+.title::before{
+  position: absolute;
+  font-size: 1rem;
+}
+.md-18{
+  color: #00b8d4;
+  margin-right: 7px;
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
 
 /* Media Queries */
 
