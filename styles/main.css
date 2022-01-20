@@ -2,7 +2,7 @@
 
 
 :root {
-  --bkg-clr:#2f4858;
+  --bkg-clr:#2d4469;
   --dashed: rgba(45 68 105 / 100%);
 
   --ylw-clr:#ff9900;
@@ -13,6 +13,8 @@
   --blue-hover: #1c2c62;
   --red-clr: #c35353;
   --red-hover: #de3838;
+
+  --info-yellow: #FFE66D;
 }
 
 * {
@@ -1009,37 +1011,39 @@ i{
 /*  Second Info Option */
 
 .file-info-note{
-  width: 40%;
-  border-left-color: #00b8d4;
+  width: 80%;
+  border-left-color: #fcbf49;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
   position: relative;
-  margin: 2em 1em;
+  margin: 2em 2em;
   padding: 0 .6rem;
-  border-left: .2rem solid #00b8d4;
+  border-left: .2rem solid #fcbf49;
   border-radius: .1rem;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   line-height: 1.6;
+  color:var(--blue-font-clr);
 }
  .file-info-note > .title{
    display: flex;
    align-items: center;
   margin: 0 -.6rem;
-  padding: .5rem .6rem .5rem 1rem;
-  border-bottom: .05rem solid rgba(68,138,255,.1);
-  border-bottom-color: rgba(68, 138, 255, 0.1);
-  background-color: rgba(68,138,255,.1);
+  padding: .5rem .6rem .5rem .6rem;
+  border-bottom: .05rem solid #fcbf49;
+  border-bottom-color: #fcbf49;
+  background-color: rgba(252,191,73,.4);
   font-weight: 700;
-  font-size: .85rem;
+  font-size: 1rem;
 }
 
 .title::before{
   position: absolute;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
-.md-18{
-  color: #00b8d4;
-  margin-right: 7px;
+.icon-color{
+  color: #F1A204;
+  margin-right: 6px;
 }
+
 
 
 .material-icons {
