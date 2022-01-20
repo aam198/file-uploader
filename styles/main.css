@@ -695,7 +695,7 @@ section{
     margin-top: 1rem;
    }
    
-    input {
+   .search-bar input {
      width: 15rem;
      height: 100%;
      border: none;
