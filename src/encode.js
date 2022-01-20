@@ -1,7 +1,7 @@
 
 
 
-// Validate .mp4 extension 
+// Validate .mp4 extension  - did this in accept for input type for Browse
 
 // Validate that there are not special characters that AWS does not take. 
 
@@ -33,6 +33,7 @@ function validateFile(file){
     nodesString += "<div>" + file_name + "</div>" + "<div>" + file_type + "</div>" + "<div>" + file_size + "</div>"; 
 
   console.log(file_name_array);
+
   var alphaExp = /^[a-zA-Z_]+$/;
   if(file_name.match(alphaExp)){
     alert("File name " + file_name + " works! Continue!");  
