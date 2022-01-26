@@ -26,14 +26,16 @@
 }
 
 body{
-    min-height: 100vh;
+    height: 300vh;
     display:flex;
     align-items: center;
     justify-content: center;
     background-color: #e3e7ea;
 }
 
-
+header{
+  height: 30vh;
+}
 /* List & Remove */
 
 .verify {
@@ -1011,7 +1013,9 @@ i{
 /*  Second Info Option */
 
 .file-info-note{
+  max-width: 700px;
   width: 80%;
+  height: auto;
   border-left-color: #fcbf49;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
   position: relative;
@@ -1044,6 +1048,9 @@ i{
   margin-right: 6px;
 }
 
+p {
+  padding: 1.5rem 1rem;
+}
 
 
 .material-icons {
