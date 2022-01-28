@@ -1010,13 +1010,13 @@ i{
   color: var(--color-primary);
 }
 
-/*  Second Info Option */
+/*  File-info-note TODO - add in */
 
 .file-info-note{
   max-width: 700px;
   width: 80%;
   height: auto;
-  border-left-color: #fcbf49;
+  border-left-color: #ff9900;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
   position: relative;
   margin: 2em 2em;
@@ -1032,8 +1032,8 @@ i{
    align-items: center;
   margin: 0 -.6rem;
   padding: .5rem .6rem .5rem .6rem;
-  border-bottom: .05rem solid #fcbf49;
-  border-bottom-color: #fcbf49;
+  border-bottom: .05rem solid #ff9900;
+  border-bottom-color: #ff9900;
   background-color: rgba(252,191,73,.4);
   font-weight: 700;
   font-size: 1rem;
@@ -1044,12 +1044,16 @@ i{
   font-size: 1.3rem;
 }
 .icon-color{
-  color: #F1A204;
+  color: #ff9900;
   margin-right: 6px;
 }
 
 p {
   padding: 1.5rem 1rem;
+}
+
+p:nth-child(2){
+  padding-bottom: 0.2rem;
 }
 
 
@@ -1077,6 +1081,8 @@ p {
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
+
+/* End of file-info-note */
 
 /* Media Queries */
 
