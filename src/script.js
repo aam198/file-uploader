@@ -1,3 +1,39 @@
+
+// import { Auth } from 'aws-amplify';
+
+// // To derive necessary data from the provider
+// const {
+//     token, // the token you get from the provider
+//     domainOrProviderName, // Either the domain of the provider(e.g. accounts.your-openid-provider.com) or the provider name, for now the library only supports 'google', 'facebook', 'amazon', 'developer'
+//     expiresIn, // the time in ms which describes how long the token could live
+//     user,  // the user object you defined, e.g. { username, email, phone_number }
+//     identity_id // Optional, the identity id specified by the provider
+// } = getFromProvider(); // arbitrary function
+
+// Auth.federatedSignIn(
+//     domain,
+//     {
+//         token,
+//         identity_id, // Optional
+//         expires_at: expiresIn * 1000 + new Date().getTime() // the expiration timestamp
+//     },
+//     user
+// ).then(cred => {
+//     // If success, you will get the AWS credentials
+//     console.log(cred);
+//     return Auth.currentAuthenticatedUser();
+// }).then(user => {
+//     // If success, the user object you passed in Auth.federatedSignIn
+//     console.log(user);
+// }).catch(e => {
+//     console.log(e)
+// });
+
+
+import { Storage } from "@aws-amplify/storage"
+
+
+
 let dropArea = document.getElementById("drop-area");
 const dragArea = document.querySelector(".drag-area");
 const dragText = document.querySelector("header");
